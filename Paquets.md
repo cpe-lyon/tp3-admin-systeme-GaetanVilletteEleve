@@ -70,7 +70,7 @@ spécifié dans cette commande. </br>
 La commande permettant de lister les programmes est:</br>
 <code>apt show coreutils</code></br>
 Ce paquet contient les utilitaires de base pour la manipulation de fichier ou de texte et les scripts d'interpreteur de commande qui sont attendus sur tout OS.</br>
-La commande **[ ]** sans la dernière barre permet de remplacer un test.
+La commande **[ ]** est un synonyme de la commande test.
 
 
 ## Exercice 5
