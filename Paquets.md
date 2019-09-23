@@ -3,10 +3,11 @@
 ## Exercice 1. Commandes de base
 
 ### Commencez par mettre à jour votre système avec les commandes vues dans le cours.
-Pour mettre à jour le système on utilise la commande:
+Pour mettre à jour le système on utilise la commande:</br>
 <code>sudo apt full-upgrade</code></br>
 
 ### 1. Quels sont les 5 derniers paquets installés sur votre machine ?
+On peut voir les 5 derniers paquets avec la commande:</br>
 <code>grep "installed" /var/log/dpkg.log | tail -5</code></br>
 
 ### 2. Utiliser dpkg et apt pour compter le nombre de paquets installés (ne pas hésiter à consulter le manuel !). Comment explique-t-on la (petite) différence de comptage ?
@@ -39,4 +40,10 @@ Le paquet permettant de jouer au sudoku est:</br>
 
 ### 7. Lister les derniers paquets installés explicitement avec la commande apt install
 
+
+## Exercice 2
+La commande en une fois:</br>
+<code>which -a ls | xargs dpkg -s 2>/dev/null</code></br>
+xargs permet de transformer une entrée standard en argument</br>
+2> permet d'envoyer les erreurs vers /dev/null qui agit comme un broyeur.
 
