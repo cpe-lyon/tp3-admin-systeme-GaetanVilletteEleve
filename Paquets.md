@@ -23,9 +23,9 @@ commande retourne 64 118</br>
 
 ### 4. Créer un alias “maj” qui met à jour le système
 Allez dans le bashrc:</br>
-<code>nano .bashrc</code>
+<code>nano .bashrc</code></br>
 créer un alias:</br>
-<code>alias maj='sudo apt full-upgrade'</code>
+<code>alias maj='sudo apt full-upgrade'</code></br>
 actualiser le bash:</br>
 <code>source ~/.bashrc</code>
 
@@ -39,11 +39,47 @@ Le paquet permettant de jouer au sudoku est:</br>
 **gnome-sudoku** (gnome faisant reference à un paquet qui necessite une interface graphique)
 
 ### 7. Lister les derniers paquets installés explicitement avec la commande apt install
-
+les derniers paquets installés explicitements sont donnés par la commande:</br>
+<code>grep apt install /var/log/dpkg.log</code></br>
 
 ## Exercice 2
 La commande en une fois:</br>
 <code>which -a ls | xargs dpkg -s 2>/dev/null</code></br>
 xargs permet de transformer une entrée standard en argument</br>
 2> permet d'envoyer les erreurs vers /dev/null qui agit comme un broyeur.
+Créer un fichier dans le dossier script:</br>
+<code>cd script</code></br>
+<code>touch origine-commande</code></br>
+<code>nano origine-commande</code></br>
+```bash
+#!/bin/bash 
+echo $(which -a $1 | xargs dpkg -s 2>/dev/null)
+```
+Ctrl+s puis Ctrl+x</br>
+
+## Exercice 3
+Ecrire une commande qui affiche “INSTALLÉ” ou “NON INSTALLÉ” selon le nom et le statut du package
+spécifié dans cette commande. </br>
+```bash
+#!/bin/bash
+(dpkg -l $1 | grep "^ii") && echo "installé" || echo "non installé"
+```
+</br> les doubles pipes permettent en cas d'erreurs ou d'échec de la commande1, alors la commande2 est executé.</br>
+
+## Exercice 4
+La commande permettant de lister les programmes est:</br>
+<code>apt show coreutils</code></br>
+Ce paquet contient les utilitaires de base pour la manipulation de fichier ou de texte et les scripts d'interpreteur de commande qui sont attendus sur tout OS.</br>
+La commande **[ ]** sans la dernière barre permet de remplacer un test.
+
+
+## Exercice 5
+
+
+
+
+
+
+
+
 
