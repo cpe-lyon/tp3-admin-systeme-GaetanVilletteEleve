@@ -74,6 +74,21 @@ La commande **[ ]** est un synonyme de la commande test.
 
 
 ## Exercice 5
+Après avoir installé aptitude avec la commande:</br>
+<code>apt install aptitude</code></br>
+J'ai recherché dans aptitude emacs avec le **/**, puis pour installer le paquet on appuie sur la touche **+** puis 2x sur **g**.</br>
+
+## Exercice 6
+### 1. Installer la version Oracle de Java (avec l’ajout des PPA)
+<code>
+sudo add-apt-repository ppa:linuxuprising/java
+sudo apt update
+sudo apt install oracle-java11-installer
+</code></br>
+### 2. Vérifiez qu’un nouveau fichier a été créé dans /etc/apt/sources.list.d. Que contient-il ?
+linuxuprising-ubuntu-java-disco.list.save et linuxuprising-ubuntu-java-disco.list</br>
+
+## Exercice 7
 
 
 
